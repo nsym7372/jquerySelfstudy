@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>セレクター</title>
+  <link type="text/css" rel="stylesheet" href="../main.css" />
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+    integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+    crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      $("h2").css("color", "Red");
+      $("#js").css("color", "aqua");
+      $(".js").css("color", "blue");
+
+      //どちらか
+      $("h2, .js").css("font-size", "2em");
+
+      //#env の下にある a
+      $("#env a").css("background-color", "#fcf");
+
+      //h2 の次の a
+      $("h2 + a").css("font-size", "0.8rem");
+
+      //.container直下のli
+      $(".container > ul").css("color", "blue");
+    });
+  </script>
+</head>
+
+<body>
+  <div id="env">
+    <h2>jQueryとは？</h2>
+    ［<a href="http://jquery.com/">本家サイト</a>］
+    <p>jQueryとは、John Resig氏によって開発されたJavaScriptの<span id="js">軽量ライブラリ</span>です。<span class="js">ライブラリ</span>の本体は、CDNを参照するか、<a
+        href="http://jquery.com/download/">こちら</a>から入手できます。</p>
+      <div class="container">
+        <ul>
+          <li>アイテム1</li>
+          <li>アイテム2</li>
+          <li>アイテム3</li>
+        </ul>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <ul>
+            <li>アイテム1</li>
+            <li>アイテム2</li>
+            <li>アイテム3</li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>
