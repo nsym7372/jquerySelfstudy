@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>属性フィルター</title>
+    <link type="text/css" rel="stylesheet" href="../main.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+        crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <script type="text/javascript">
+        $(function () {
+            $(":header").css("background-color", "red"); //h1~h6
+            $("a[target]").css("background-color", "yellow");
+            $('a[href $= ".to/"]').css("background-color", "blue"); //valueと比較
+        });
+    </script>
+</head>
+
+<body>
+    <h2 id="caption">参考サイト</h2>
+    <ul>
+        <li><a href="http://codezine.jp/" target="other">
+                CodeZine：開発者のための実装系Webマガジン</a></li>
+        <li><a href="http://www.wings.msn.to/">
+                WINGSプロジェクト - サーバサイド技術の学び舎</a></li>
+        <li><a href="http://www.web-deli.com/">
+                WebDeli - Spicy Tools, Delicious Sites</a></li>
+    </ul>
+
+    <h3>sample</h3>
+</body>
+
+</html>

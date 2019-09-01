@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>属性</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("img:not([title])").attr("title", "ロゴ画像");
+            $("img").attr({
+                alt: "ロゴ",
+                width: "300",
+                height: "100"
+            });
+
+            alert($("img").attr("title"));
+
+            let $last =$("img:last");
+            $last.removeAttr("width");
+            $last.removeAttr("height");
+
+            let $window = $(window);    //windowsオブジェクトをjqueryに変換、クオート不要（名前ではない）
+            $window.scrollTop(30);    
+            alert($window.height());    //表示されている領域のみ、ブラウザサイズ変更で値が変化
+            alert($(document).height());    //ページ全体、ブラウザのサイズに関わらない
+        });
+    </script>
+</head>
+
+<body>
+    <p><img src="../images/html5_logo.jpg" title="HTML5基礎" /></p>
+    <p><img src="../images/jquery10_logo.jpg" /></p>
+    <p><img src="../images/selfjsp_logo.jpg" /></p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</body>
+
+</html>
