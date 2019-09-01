@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>テキスト</title>
+    <link type="text/css" rel="stylesheet" href="../main.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        //子要素として、text or htmlを設定
+        $(function () {
+
+            $("#result_text").text('<a href="http://www.wings.msn.to">wings</a>');
+            $("#result_html").html('<a href="http://www.wings.msn.to">wings</a>');
+
+            $("#selectedtext").on("click", function(){
+                alert($("#result_html").text());
+                alert($("#result_html").html());
+            });
+
+            //input, textarea, select, buttonはtext/htmlメソッドで値を取れない
+            $("#selectedvalue").on("click", function(){
+                let $select = $("select");
+                alert($select.val());
+                $select.val(1);
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li id="result_text"></li>
+        <li id="result_html"></li>
+    </ul>
+    <button id="selectedtext" class="btn btn-info mb-3">送信</button>
+
+    <div class="form-group">
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <button id="selectedvalue" class="btn btn-info">送信</button>
+</body>
+
+</html>

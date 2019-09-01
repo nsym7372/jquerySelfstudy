@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>要素の追加</title>
+    <link type="text/css" rel="stylesheet" href="../main.css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body > div.container {
+            border-bottom: 1px solid gray;
+            margin-bottom: .5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container normal">
+        <ul id="car">
+            <li>自転車</li>
+        </ul>
+    </div>
+
+    <div class="container parent">
+        <ul id="car">
+            <li>自転車</li>
+        </ul>
+    </div>
+
+    <div class="container chain">
+        <ul id="car">
+            <li>自転車</li>
+        </ul>
+    </div>
+
+    <nav class="navbar navbar-dark bg-dark my-3">
+        <div class="container">
+            <a class="navbar-brand" href="#">フッター</a>
+        </div>
+    </nav>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            let $ncar = $(".normal #car");
+            $("<li>三輪車</li>").prependTo($ncar);   //要素の子要素として追加（先頭）
+            $("<li>オートバイ</li>").appendTo($ncar);    //要素の子要素として追加（末尾）
+            $("<p>ベビーカー</p>").insertBefore($ncar);  //要素の前に追加
+            $("<p>自動車</p>").insertAfter($ncar);   //要素の後に追加
+
+            $(".navbar").prependTo("body"); //既に存在する要素を移動
+
+            //prepend, append, before, after 親から見るか子から見るかの違い
+            let $pcar = $(".parent #car");
+            $($pcar).prepend("<li>三輪車</li>");
+            $($pcar).append("<li>オートバイ</li>");
+            $($pcar).before("<p>ベビーカー</p>");
+            $($pcar).after("<p>自動車</p>"); //上のinsertAfterと同じ
+
+            //メソッドチェーン（自分自身を返す）
+            $(".chain #car")
+                .prepend("<li>三輪車</li>")
+                .append("<li>オートバイ</li>")
+                .before("<p>ベビーカー</p>")
+                .after("<p>自動車</p>");
+        });
+    </script>
+
+</body>
+
+</html>
